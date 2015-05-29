@@ -1,56 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:gravity="center_horizontal"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="60dp"
-        android:src="@drawable/stop" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/find_button"
+        android:text="Find"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="you are at"
-        android:textColor="@android:color/white"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+        android:text="Closest stops within"
+        android:textSize="20dp"
+        android:textColor="@android:color/black"
+        android:layout_toRightOf="@id/find_button"
+        android:layout_toEndOf="@id/find_button"
+        android:id="@+id/find_text"
+        android:paddingTop="5dp"
+        />
+
+    <EditText
+        android:id="@+id/search_box"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:hint="50"
+        android:textColor="@android:color/black"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/find_text"
+        android:layout_toEndOf="@id/find_text"
+        android:layout_gravity="right" />
 
     <TextView
-        android:id="@+id/lblLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:padding="15dp"
-        android:textColor="@android:color/white"
-        android:textSize="16dp" />
+        android:text="m"
+        android:layout_toRightOf="@id/search_box"
+        android:layout_toEndOf="@id/search_box"
+        android:textSize="20dp"
+        android:textColor="@android:color/black"
+        android:paddingTop="5dp"
+        />
 
-    <Button
-        android:id="@+id/btnShowLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@android:color/holo_blue_bright"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="get location"
-        android:textColor="@android:color/white" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/search_result_list"
+        android:layout_below="@id/search_box"
+        >
 
-    <Button
-        android:id="@+id/btnLocationUpdates"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:background="@android:color/holo_blue_bright"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="start location update"
-        android:textColor="@android:color/white" />
+    </FrameLayout>
 
-</LinearLayout>
+</RelativeLayout>

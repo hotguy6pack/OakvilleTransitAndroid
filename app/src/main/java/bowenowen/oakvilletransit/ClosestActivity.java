@@ -14,7 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import bowenowen.oakvilletransit.Fragments.Closest.ClosestListFragment;
+import bowenowen.oakvilletransit.Fragments.Closest.ClosestFragment;
 
 
 public class ClosestActivity extends Activity{
@@ -30,7 +30,7 @@ public class ClosestActivity extends Activity{
 
         setContentView(R.layout.activity_gps);
 
-        switchFragment(new ClosestListFragment());
+        switchFragment(new ClosestFragment());
         setTitle("Nearest Stop");
 
         mDrawerList = (ListView)findViewById(R.id.navList);
