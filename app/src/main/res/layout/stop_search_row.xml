@@ -39,7 +39,7 @@
 
     <TextView
         android:id="@+id/stop_title"
-        android:layout_width="260dp"
+        android:layout_width="240dp"
         android:layout_height="55dp"
         android:minLines="2"
         android:paddingTop="5dp"

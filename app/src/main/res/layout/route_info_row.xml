@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="65dp"
+    android:layout_height="75dp"
 
     android:padding="8dp"
     android:background="@android:color/white"
@@ -12,14 +12,15 @@
     <ImageView
         android:id="@+id/stop_image"
         android:src="@drawable/stop"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:focusable = "false"
         android:focusableInTouchMode = "false"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/add_fav_button"
         android:layout_toLeftOf="@+id/stop_title"
-        />
+        android:layout_toStartOf="@+id/stop_title" />
 
     <TextView
         android:id="@+id/stop_logo_num"
@@ -33,13 +34,13 @@
         android:textColor="@android:color/black"
         android:focusable = "false"
         android:focusableInTouchMode = "false"
-        android:layout_below="@+id/stop_image"
         android:layout_toLeftOf="@+id/stop_title"
-        android:layout_toStartOf="@+id/stop_title" />
+        android:layout_toStartOf="@+id/stop_title"
+        android:layout_below="@+id/add_fav_button" />
 
     <TextView
         android:id="@+id/stop_title"
-        android:layout_width="260dp"
+        android:layout_width="230dp"
         android:layout_height="55dp"
         android:layout_marginLeft="10dp"
         android:minLines="2"

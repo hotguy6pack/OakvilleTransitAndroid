@@ -74,10 +74,10 @@ public class DBHelper extends SQLiteOpenHelper
             + "(" + ROUTE_ID + " INTEGER PRIMARY KEY," + ROUTE_NUMBER + " TEXT" + ")";
 
 
-    private static final String DATABASE_NAME = "Transit";
+    private static final String DATABASE_NAME = "transit.sqlite";
     private int DATABASE_VERSION;
 
-    private static String DB_PATH = "/data/data/bowenowen.oakvilletransit/databases/";
+        private static String DB_PATH = "/data/data/bowenowen.oakvilletransit/databases/";
     private SQLiteDatabase myDataBase;
 
     private final Context myContext;

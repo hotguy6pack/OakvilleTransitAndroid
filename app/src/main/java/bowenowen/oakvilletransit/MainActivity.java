@@ -36,13 +36,14 @@ public class MainActivity extends ActionBarActivity{
 
     private void createDB()
         {
-        getApplicationContext().deleteDatabase("Transit");
+        getApplicationContext().deleteDatabase("transit.sqlite");
 
-        File database=getApplicationContext().getDatabasePath("Transit");
+        File database=getApplicationContext().getDatabasePath("transit.sqlite");
 
         if(!database.exists())
         {
             db = new DBHelper(getApplicationContext(), 1);
+            database.getParentFile().mkdirs();
             copyDatabase();
 
             //manuallyPoplateDatebase();
@@ -184,7 +185,6 @@ public class MainActivity extends ActionBarActivity{
     private void copyDatabase()
     {
         try {
-
             db.copyDataBase();
 
         } catch (IOException e) {
