@@ -31,7 +31,7 @@ public class ClosestActivity extends Activity{
         setContentView(R.layout.activity_gps);
 
         switchFragment(new ClosestFragment());
-        setTitle("Nearest Stop");
+        setTitle("Closest Stops with 100 m");
 
         mDrawerList = (ListView)findViewById(R.id.navList);
         addDrawerItems();

@@ -27,7 +27,7 @@
         android:id="@+id/search_box"
         android:layout_width="75dp"
         android:layout_height="wrap_content"
-        android:hint="50"
+        android:text="100"
         android:textColor="@android:color/black"
         android:inputType="number"
         android:ems="10"

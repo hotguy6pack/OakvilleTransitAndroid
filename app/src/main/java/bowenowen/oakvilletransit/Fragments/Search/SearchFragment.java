@@ -20,7 +20,7 @@ public class SearchFragment extends Fragment{
         View view = inflater.inflate(R.layout.search_fragment, null, false);
 
         ImageButton searchButton = (ImageButton) view.findViewById(R.id.search_stop_button);
-        final EditText editText = (EditText) view.findViewById(R.id.search_box);
+            final EditText editText = (EditText) view.findViewById(R.id.search_box);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
