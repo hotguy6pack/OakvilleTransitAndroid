@@ -12,17 +12,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.RadioGroup;
 
 import bowenowen.oakvilletransit.Fragments.NearestFragment;
 import bowenowen.oakvilletransit.Fragments.Route.RouteAdapter;
 import bowenowen.oakvilletransit.Fragments.Route.RouteFragment;
 import bowenowen.oakvilletransit.Fragments.Route.RouteInfoAdapter;
 import bowenowen.oakvilletransit.Fragments.Route.RouteInfoFragment;
-import bowenowen.oakvilletransit.Fragments.Route.RouteListFragment;
-import bowenowen.oakvilletransit.Model.Route;
 import info.hoang8f.android.segmented.SegmentedGroup;
 
 /**
@@ -90,7 +86,7 @@ public class RoutesActivity extends Activity {
                     finish();
                 } else if (position == 2)
                 {
-                    intent = new Intent(getApplicationContext(), GPSActivity.class);
+                    intent = new Intent(getApplicationContext(), ClosestActivity.class);
                     startActivity(intent);
                     finish();
                 }

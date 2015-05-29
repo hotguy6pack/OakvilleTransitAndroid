@@ -32,7 +32,7 @@
                 android:value="bowenowen.oakvilletransit.HomeActivity" />
         </activity>
         <activity
-            android:name=".GPSActivity"
+            android:name=".ClosestActivity"
             android:label="@string/title_activity_gps" >
         </activity>
         <uses-permission android:name="android.permission.INTERNET"/>

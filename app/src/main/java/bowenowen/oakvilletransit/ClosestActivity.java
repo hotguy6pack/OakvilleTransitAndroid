@@ -14,30 +14,24 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import bowenowen.oakvilletransit.Fragments.Search.SearchAdapter;
-import bowenowen.oakvilletransit.Fragments.Search.SearchFragment;
+import bowenowen.oakvilletransit.Fragments.Closest.ClosestListFragment;
 
-/**
- * Created by owenchen on 15-05-10.
- */
-public class SearchActivity extends Activity {
+
+public class ClosestActivity extends Activity{
+
     private ListView mDrawerList;
     private ArrayAdapter<String> mAdapter;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
-    private CharSequence mDrawerTitle;
-    private CharSequence mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_gps);
 
-        switchFragment(new SearchFragment());
-
-
-        setTitle("Search Stops");
+        switchFragment(new ClosestListFragment());
+        setTitle("Nearest Stop");
 
         mDrawerList = (ListView)findViewById(R.id.navList);
         addDrawerItems();
@@ -53,7 +47,7 @@ public class SearchActivity extends Activity {
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
-                getActionBar().setTitle("Search Stops");
+                getActionBar().setTitle("Favourite Stops");
             }
 
             /** Called when a drawer has settled in a completely open state. */
@@ -78,34 +72,33 @@ public class SearchActivity extends Activity {
                     startActivity(intent);
                     finish();
                 } else if (position == 1) {
-                    intent = new Intent(getApplicationContext(), SearchActivity.class);
+                    intent = new Intent(getApplicationContext(), RoutesActivity.class);
                     startActivity(intent);
                     finish();
                 } else if (position == 2)
                 {
-                    intent = new Intent(getApplicationContext(), ClosestActivity.class);
+                    intent = new Intent(getApplicationContext(), SearchActivity.class);
                     startActivity(intent);
                     finish();
                 }
+
             }
         });
-
-
     }
 
-    public void setAdapter(ListView listView, String query)
-    {
-        listView.setAdapter(new SearchAdapter(this, query));
-    }
+
+//    public void setFavouriteAdapter(ListView listView) {
+//        listView.setAdapter(new FavouriteAdapter(this));
+//    }
 
     private void switchFragment(Fragment fragment)
     {
         FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.search_fragment, fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.nearest_list, fragment).commit();
     }
 
     private void addDrawerItems() {
-        String[] menuItem = { "Favourite Stops", "All Routes", "Closest Stops"};
+        String[] menuItem = { "Favourite Stops","All Routes", "Search Stops"};
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, menuItem);
         mDrawerList.setAdapter(mAdapter);
     }
@@ -134,6 +127,5 @@ public class SearchActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-
 
 }

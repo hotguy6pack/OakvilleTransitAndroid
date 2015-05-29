@@ -8,17 +8,14 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import bowenowen.oakvilletransit.Fragments.Home.FavouriteAdapter;
 import bowenowen.oakvilletransit.Fragments.Home.FavouriteListFragment;
-import bowenowen.oakvilletransit.Fragments.Route.RouteAdapter;
 
 /**
  * Created by owenchen on 15-05-09.
@@ -87,7 +84,7 @@ public class HomeActivity extends Activity{
                     finish();
                 } else if (position == 2)
                 {
-                    intent = new Intent(getApplicationContext(), GPSActivity.class);
+                    intent = new Intent(getApplicationContext(), ClosestActivity.class);
                     startActivity(intent);
                     finish();
                 }
