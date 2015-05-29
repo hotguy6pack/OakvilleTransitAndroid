@@ -85,6 +85,11 @@ public class SearchActivity extends Activity {
                     intent = new Intent(getApplicationContext(), SearchActivity.class);
                     startActivity(intent);
                     finish();
+                } else if (position == 2)
+                {
+                    intent = new Intent(getApplicationContext(), GPSActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
             }
         });
@@ -104,7 +109,7 @@ public class SearchActivity extends Activity {
     }
 
     private void addDrawerItems() {
-        String[] menuItem = { "Favourite Stops", "All Routes"};
+        String[] menuItem = { "Favourite Stops", "All Routes", "Closest Stops"};
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, menuItem);
         mDrawerList.setAdapter(mAdapter);
     }
